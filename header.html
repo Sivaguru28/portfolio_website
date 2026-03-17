@@ -1,8 +1,18 @@
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e0e0e0] dark:border-b-[#283039] bg-background-light dark:bg-background-dark px-4 py-3 md:px-10">
+<header class="sticky top-0 z-50 flex flex-wrap items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e0e0e0] dark:border-b-[#283039] bg-background-light dark:bg-background-dark px-4 py-3 md:px-10">
+  
   <div class="flex items-center gap-4">
-    <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-      <a href="index.html" class="material-symbols-outlined text-2xl">home</a>
-    </div>
+    
+    <a href="index.html" id="logo-default" class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+      <span class="material-symbols-outlined text-2xl">home</span>
+    </a>
+
+    <a href="index.html" id="logo-index" class="hidden items-center gap-3 text-[#111418] dark:text-white">
+      <div class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary">
+        <span class="material-symbols-outlined text-xl">shield_with_heart</span>
+      </div>
+      <h2 class="text-lg font-bold leading-tight tracking-tight">Sivagurunathan</h2>
+    </a>
+
   </div>
   
   <div class="hidden flex-1 justify-end gap-8 md:flex">
@@ -14,28 +24,74 @@
       <a href="contact.html" class="nav-item text-sm font-medium hover:text-primary transition-colors">Contact</a>
     </div>
     
-    <a href="https://drive.google.com/file/d/1Xg9Gn7nt5uygJzz6T4VJF_Y8O5drw-fE/view?usp=drive_link" target="_blank" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+    <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
       <span class="mr-2 material-symbols-outlined text-[18px]">open_in_new</span>
       <span class="truncate">View Resume</span>
     </a>
   </div>
   
   <div class="md:hidden">
-    <button class="text-[#111418] dark:text-white">
-      <span class="material-symbols-outlined">menu</span>
+    <button id="mobile-menu-btn" class="text-[#111418] dark:text-white flex items-center justify-center p-1">
+      <span id="mobile-menu-icon" class="material-symbols-outlined text-3xl">menu</span>
     </button>
   </div>
+
+  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-light dark:bg-background-dark border-b border-solid border-b-[#e0e0e0] dark:border-b-[#283039] flex-col px-6 py-6 shadow-lg md:hidden">
+    <div class="flex flex-col gap-6">
+      <a href="index.html" class="nav-item text-lg font-bold hover:text-primary transition-colors">Home</a>
+      <a href="About.html" class="nav-item text-lg font-bold hover:text-primary transition-colors">About</a>
+      <a href="project.html" class="nav-item text-lg font-bold hover:text-primary transition-colors">Projects</a>
+      <a href="tech.html" class="nav-item text-lg font-bold hover:text-primary transition-colors">Skills</a>
+      <a href="contact.html" class="nav-item text-lg font-bold hover:text-primary transition-colors">Contact</a>
+      <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary hover:bg-primary/90 transition-colors text-white text-base font-bold leading-normal tracking-[0.015em] mt-4">
+        <span class="mr-2 material-symbols-outlined text-[20px]">open_in_new</span>
+        <span>View Resume</span>
+      </a>
+    </div>
+  </div>
+
 </header>
 
 <script>
-  (function highlightActivePage() {
+  // Setup all dynamic header logic
+  (function setupHeader() {
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    // 1. Dynamic Logo Swapper
+    const logoDefault = document.getElementById('logo-default');
+    const logoIndex = document.getElementById('logo-index');
+
+    if (currentPage === "index.html" || currentPage === "") {
+      if(logoDefault) logoDefault.classList.add('hidden');
+      if(logoIndex) {
+        logoIndex.classList.remove('hidden');
+        logoIndex.classList.add('flex');
+      }
+    }
+
+    // 2. Highlight Active Page
     const links = document.querySelectorAll(".nav-item");
-    
     links.forEach(link => {
       if (link.getAttribute("href") === currentPage) {
-        link.classList.add("text-primary"); // Make it green
+        link.classList.add("text-primary"); 
       }
     });
+
+    // 3. Mobile Menu Toggle Logic
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileIcon = document.getElementById('mobile-menu-icon');
+
+    if(mobileBtn && mobileMenu && mobileIcon) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileIcon.innerText = 'menu';
+        } else {
+          mobileIcon.innerText = 'close';
+        }
+      });
+    }
   })();
 </script>
