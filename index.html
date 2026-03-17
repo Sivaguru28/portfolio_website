@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Sivagurunathan P. - Full-Stack Developer Portfolio</title>
+    <link rel="icon" type="image/png" href="https://ui-avatars.com/api/?name=S+P&background=152111&color=49e619&rounded=true&bold=true" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -57,65 +58,7 @@
           <div
             class="layout-content-container flex flex-col w-full max-w-[960px] flex-1"
           >
-            <div class="flex items-center justify-between whitespace-nowrap">
-              <div class="flex items-center gap-3 text-white">
-                <div
-                  class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary"
-                >
-                  <span class="material-symbols-outlined text-xl"
-                    >shield_with_heart</span
-                  >
-                </div>
-                <h2
-                  class="text-white text-lg font-bold leading-tight tracking-tight"
-                >
-                  Sivagurunathan
-                </h2>
-              </div>
-              <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
-                <nav class="flex items-center gap-6 lg:gap-9">
-                  <a
-                    href="index.html"
-                    class="text-primary text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                    href="#"
-                    >Home</a
-                  >
-                  <a
-                    href="About.html"
-                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                    href="#"
-                    >About</a
-                  >
-                  <a
-                    href="tech.html"
-                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                    href="#"
-                    >Skills</a
-                  >
-                  <a
-                    href="project.html"
-                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                    href="#"
-                    >Experience</a
-                  >
-                  <a
-                    href="contact.html"
-                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
-                    href="#"
-                    >Contact</a
-                  >
-                </nav>
-                <button
-                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary hover:bg-[#3cd114] transition-colors text-background-dark text-sm font-bold leading-normal tracking-wide shadow-lg shadow-primary/20"
-                >
-                  <span class="truncate">Download Resume</span>
-                </button>
-              </div>
-              <!-- Mobile Menu Icon (Visual Only) -->
-              <div class="md:hidden text-white">
-                <span class="material-symbols-outlined">menu</span>
-              </div>
-            </div>
+            <div id="header-placeholder"></div>
           </div>
         </div>
       </div>
@@ -411,6 +354,23 @@
       if (expSummaryEl) {
         expSummaryEl.textContent = getExperienceInWords(CAREER_START_DATE);
       }
+    </script>
+
+        <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+
+          // Because the header is injected AFTER the page loads, we need to run the highlight script manually
+          const scripts = document
+            .getElementById("header-placeholder")
+            .getElementsByTagName("script");
+          for (let i = 0; i < scripts.length; i++) {
+            eval(scripts[i].innerText);
+          }
+        })
+        .catch((error) => console.error("Error loading header:", error));
     </script>
   </body>
 </html>
