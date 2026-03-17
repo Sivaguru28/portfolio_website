@@ -1,13 +1,13 @@
 <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e0e0e0] dark:border-b-[#283039] bg-background-light dark:bg-background-dark px-4 py-3 md:px-10">
   <div class="flex items-center gap-4">
     <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-      <a href="home.html" class="material-symbols-outlined text-2xl">home</a>
+      <a href="index.html" class="material-symbols-outlined text-2xl">home</a>
     </div>
   </div>
   
   <div class="hidden flex-1 justify-end gap-8 md:flex">
     <div class="hidden md:flex items-center gap-8" id="nav-links">
-      <a href="home.html" class="nav-item text-sm font-medium hover:text-primary transition-colors">Home</a>
+      <a href="index.html" class="nav-item text-sm font-medium hover:text-primary transition-colors">Home</a>
       <a href="About.html" class="nav-item text-sm font-medium hover:text-primary transition-colors">About</a>
       <a href="project.html" class="nav-item text-sm font-medium hover:text-primary transition-colors">Projects</a>
       <a href="tech.html" class="nav-item text-sm font-medium hover:text-primary transition-colors">Skills</a>      
@@ -29,7 +29,7 @@
 
 <script>
   (function highlightActivePage() {
-    const currentPage = window.location.pathname.split("/").pop() || "home.html";
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
     const links = document.querySelectorAll(".nav-item");
     
     links.forEach(link => {
