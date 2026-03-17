@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tech Stack - Developer Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#49e619",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#152111",
+                        "surface-dark": "#1c2b18",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #152111; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2c3829; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #49e619; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#131811] dark:text-white font-display transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<div id="header-placeholder"></div>
+<!-- Main Content -->
+<main class="flex-1 px-4 md:px-10 lg:px-40 py-10 flex justify-center">
+<div class="flex flex-col max-w-[1200px] w-full gap-8">
+<!-- Section Header -->
+<div class="flex flex-col gap-2">
+<h2 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-[-0.03em]">Tech Stack &amp; Expertise</h2>
+<p class="text-neutral-500 dark:text-neutral-400 text-base font-medium max-w-[700px]">
+                        A comprehensive overview of my technical capabilities. Focused on building scalable, high-performance applications within the Microsoft ecosystem and modern web frameworks.
+                    </p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
+<!-- Backend Card (Hero - Spans 2 cols on Large) -->
+<div class="group relative flex flex-col p-8 rounded-[2rem] bg-surface-light dark:bg-surface-dark border border-neutral-200 dark:border-[#2c3829] lg:col-span-2 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm dark:shadow-none">
+<!-- Decorative gradient background -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col h-full justify-between gap-8">
+<div class="flex items-start justify-between">
+<div class="p-3 rounded-full bg-background-light dark:bg-background-dark w-fit text-primary border border-neutral-200 dark:border-[#2c3829]">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">Core Expertise</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-2">Backend Powerhouse</h3>
+<p class="text-neutral-500 dark:text-neutral-400 mb-6 text-sm md:text-base">
+                                    Architecting robust server-side solutions. Specialized in .NET ecosystem for high-throughput, secure, and maintainable APIs.
+                                </p>
+<div class="flex flex-wrap gap-3">
+<!-- C# -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">code</span>
+<p class="text-sm font-semibold">C#</p>
+</div>
+<!-- .NET Core -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">settings_system_daydream</span>
+<p class="text-sm font-semibold">.NET Core</p>
+</div>
+<!-- RESTful APIs -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">api</span>
+<p class="text-sm font-semibold">RESTful APIs</p>
+</div>
+<!-- Entity Framework -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">dataset</span>
+<p class="text-sm font-semibold">Entity Framework</p>
+</div>
+<!-- SignalR -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">broadcast_on_personal</span>
+<p class="text-sm font-semibold">SignalR</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Frontend Card -->
+<div class="group relative flex flex-col p-8 rounded-[2rem] bg-surface-light dark:bg-surface-dark border border-neutral-200 dark:border-[#2c3829] lg:col-span-1 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm dark:shadow-none">
+<div class="absolute inset-0 bg-gradient-to-bl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col h-full justify-between gap-6">
+<div class="p-3 rounded-full bg-background-light dark:bg-background-dark w-fit text-primary border border-neutral-200 dark:border-[#2c3829]">
+<span class="material-symbols-outlined text-3xl">web</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-2">Modern Frontend</h3>
+<p class="text-neutral-500 dark:text-neutral-400 mb-6 text-sm">
+                                    Creating responsive, interactive user interfaces.
+                                </p>
+<div class="flex flex-wrap gap-3">
+<!-- Angular -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-3 pr-4 border border-primary/40 hover:bg-primary/30 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-primary">javascript</span>
+<p class="text-sm font-bold text-primary-dark dark:text-primary">Angular v19 &amp; v21</p>
+</div>
+<!-- HTML -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">html</span>
+<p class="text-sm font-semibold">HTML5</p>
+</div>
+<!-- CSS -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">css</span>
+<p class="text-sm font-semibold">CSS3</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Database Card -->
+<div class="group relative flex flex-col p-8 rounded-[2rem] bg-surface-light dark:bg-surface-dark border border-neutral-200 dark:border-[#2c3829] lg:col-span-1 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm dark:shadow-none">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col h-full justify-between gap-6">
+<div class="p-3 rounded-full bg-background-light dark:bg-background-dark w-fit text-primary border border-neutral-200 dark:border-[#2c3829]">
+<span class="material-symbols-outlined text-3xl">database</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-2">Data Persistence</h3>
+<p class="text-neutral-500 dark:text-neutral-400 mb-6 text-sm">
+                                    Optimized database design and management.
+                                </p>
+<div class="flex flex-wrap gap-3">
+<!-- SQL Server -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">table_view</span>
+<p class="text-sm font-semibold">SQL Server</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tools & Platforms (Spans 2 on Large to balance layout) -->
+<div class="group relative flex flex-col p-8 rounded-[2rem] bg-surface-light dark:bg-surface-dark border border-neutral-200 dark:border-[#2c3829] lg:col-span-2 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm dark:shadow-none">
+<div class="absolute inset-0 bg-gradient-to-tl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center h-full gap-8">
+<div class="flex flex-col gap-6 md:w-1/2">
+<div class="p-3 rounded-full bg-background-light dark:bg-background-dark w-fit text-primary border border-neutral-200 dark:border-[#2c3829]">
+<span class="material-symbols-outlined text-3xl">construction</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-2">Ecosystem &amp; Tools</h3>
+<p class="text-neutral-500 dark:text-neutral-400 text-sm md:text-base">
+                                        Streamlining development workflows with modern CI/CD, project management, and automation tools.
+                                    </p>
+</div>
+</div>
+<div class="flex flex-wrap content-start items-start gap-3 md:w-1/2">
+<!-- Git -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">call_split</span>
+<p class="text-sm font-semibold">Git</p>
+</div>
+<!-- Jira -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">task_alt</span>
+<p class="text-sm font-semibold">Jira</p>
+</div>
+<!-- N8N -->
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-neutral-100 dark:bg-[#2c3829] pl-3 pr-4 border border-transparent hover:border-primary/50 transition-all cursor-default group/chip">
+<span class="material-symbols-outlined text-lg text-neutral-600 dark:text-neutral-400 group-hover/chip:text-primary">account_tree</span>
+<p class="text-sm font-semibold">N8N Workflow Automation</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+      
+      // Because the header is injected AFTER the page loads, we need to run the highlight script manually
+      const scripts = document.getElementById('header-placeholder').getElementsByTagName('script');
+      for (let i = 0; i < scripts.length; i++) {
+        eval(scripts[i].innerText);
+      }
+    })
+    .catch(error => console.error('Error loading header:', error));
+</script>
+</body></html>

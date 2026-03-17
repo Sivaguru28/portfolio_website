@@ -1,0 +1,416 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sivagurunathan P. - Full-Stack Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#49e619",
+              "background-light": "#f6f8f6",
+              "background-dark": "#152111",
+              "surface-dark": "#1e2b1a",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden min-h-screen flex flex-col"
+  >
+    <!-- Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-white/10 bg-background-dark/80 backdrop-blur-md"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-4">
+          <div
+            class="layout-content-container flex flex-col w-full max-w-[960px] flex-1"
+          >
+            <div class="flex items-center justify-between whitespace-nowrap">
+              <div class="flex items-center gap-3 text-white">
+                <div
+                  class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >shield_with_heart</span
+                  >
+                </div>
+                <h2
+                  class="text-white text-lg font-bold leading-tight tracking-tight"
+                >
+                  Sivagurunathan
+                </h2>
+              </div>
+              <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <nav class="flex items-center gap-6 lg:gap-9">
+                  <a
+                    href="home.html"
+                    class="text-primary text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                    href="#"
+                    >Home</a
+                  >
+                  <a
+                    href="About.html"
+                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                    href="#"
+                    >About</a
+                  >
+                  <a
+                    href="tech.html"
+                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                    href="#"
+                    >Skills</a
+                  >
+                  <a
+                    href="project.html"
+                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                    href="#"
+                    >Experience</a
+                  >
+                  <a
+                    href="contact.html"
+                    class="text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                    href="#"
+                    >Contact</a
+                  >
+                </nav>
+                <button
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary hover:bg-[#3cd114] transition-colors text-background-dark text-sm font-bold leading-normal tracking-wide shadow-lg shadow-primary/20"
+                >
+                  <span class="truncate">Download Resume</span>
+                </button>
+              </div>
+              <!-- Mobile Menu Icon (Visual Only) -->
+              <div class="md:hidden text-white">
+                <span class="material-symbols-outlined">menu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <main class="flex-1">
+      <div class="relative flex h-auto w-full flex-col">
+        <div class="layout-container flex h-full grow flex-col">
+          <div
+            class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-10 lg:py-20"
+          >
+            <div
+              class="layout-content-container flex flex-col max-w-[960px] flex-1"
+            >
+              <div class="@container">
+                <div
+                  class="flex flex-col-reverse gap-10 lg:gap-16 lg:flex-row items-center"
+                >
+                  <!-- Content Column -->
+                  <div class="flex flex-col gap-8 flex-1 w-full lg:w-1/2">
+                    <div class="flex flex-col gap-4 text-left">
+                      <!-- Badge/Label -->
+                      <div
+                        class="flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1"
+                      >
+                        <span
+                          class="size-2 rounded-full bg-primary animate-pulse"
+                        ></span>
+                        <span
+                          class="text-xs font-bold uppercase tracking-wide text-primary"
+                          >Open to work</span
+                        >
+                      </div>
+                      <h1
+                        class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl lg:text-6xl"
+                      >
+                        Innovating with Code:
+                        <span class="text-primary">Driving Solutions</span> as a
+                        Full-Stack Engineer
+                      </h1>
+                      <p
+                        class="text-gray-400 text-base font-normal leading-relaxed md:text-lg"
+                      >
+                        Hello! I'm Sivagurunathan P, a passionate Full-Stack
+                        Developer with
+                        <strong
+                          id="experience-summary"
+                          class="text-[#111418] dark:text-white"
+                        ></strong>
+                        of experience. I specialize in crafting robust, scalable
+                        applications using
+                        <span class="text-white font-medium">C#, .NET Core</span
+                        >, and modern
+                        <span class="text-white font-medium"
+                          >Angular (v19 &amp; v21)</span
+                        >
+                        frameworks. Currently transforming complex challenges
+                        into elegant solutions at Vagus Technologies.
+                      </p>
+                    </div>
+                    <!-- Tech Stack Chips -->
+                    <div class="flex flex-col gap-3">
+                      <p
+                        class="text-xs font-bold uppercase tracking-wider text-gray-500"
+                      >
+                        Core Technologies
+                      </p>
+                      <div class="flex gap-2 flex-wrap">
+                        <div
+                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
+                        >
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >code</span
+                          >
+                          <p
+                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
+                          >
+                            C#
+                          </p>
+                        </div>
+                        <div
+                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
+                        >
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >terminal</span
+                          >
+                          <p
+                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
+                          >
+                            .NET Core
+                          </p>
+                        </div>
+                        <div
+                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
+                        >
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >html</span
+                          >
+                          <p
+                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
+                          >
+                            Angular v19/v21
+                          </p>
+                        </div>
+                        <div
+                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
+                        >
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >api</span
+                          >
+                          <p
+                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
+                          >
+                            RESTful APIs
+                          </p>
+                        </div>
+                        <div
+                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
+                        >
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >database</span
+                          >
+                          <p
+                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
+                          >
+                            SQL Server
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- CTA Actions -->
+                    <div class="flex flex-wrap gap-4 pt-2">
+                      <button
+                        class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary hover:bg-[#3cd114] text-background-dark text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/25 transition-all hover:scale-105"
+                      >
+                        <span class="mr-2 material-symbols-outlined text-[20px]"
+                          >download</span
+                        >
+                        <span class="truncate">Download Resume</span>
+                      </button>
+                      <a
+                        href="project.html"
+                        class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-surface-dark hover:bg-white/10 border border-white/10 text-white text-base font-bold leading-normal tracking-wide transition-all"
+                      >
+                        <span class="truncate">View Projects</span>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- Image Column -->
+                  <div
+                    class="w-full lg:w-1/2 flex justify-center lg:justify-end"
+                  >
+                    <div
+                      class="relative w-full max-w-[500px] aspect-square rounded-2xl overflow-hidden group"
+                    >
+                      <!-- Decorative elements -->
+                      <div
+                        class="absolute -inset-1 bg-gradient-to-tr from-primary/40 to-transparent opacity-30 blur-2xl group-hover:opacity-50 transition-opacity duration-500"
+                      ></div>
+                      <!-- Main Image -->
+                      <div
+                        class="relative h-full w-full bg-center bg-cover bg-no-repeat rounded-2xl border border-white/10 bg-surface-dark shadow-2xl"
+                        data-alt="Professional developer working on code in a modern dark office setup with multiple monitors"
+                        style="
+                          background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCgNY7JrZeRtpIfF5Y-WMvqaPBCf6G3qa9xBFVxFN6fwYCIbzTCGEgDMFF9Sg0wUiPNS6K1i8OJ-23_UhNrJEHD5Imwkv5DuvTnJgHRLA0wvhKz_j5V6WfjP01h9lVP1UJUS9OllMSasYn3Ikip8-6kUTVmKQtxXzckshRMSOTRnHSUnD_IuaIIrLhwFVjgkG-4DhB2boldvnLeHxKQyFCj7jniGmFvubAwa5ufsZDNO6isCL4oEPWpX7Lysk5gVf11o7vEXTijrGE&quot;);
+                        "
+                      >
+                        <!-- Overlay gradient for text readability if needed -->
+                        <div
+                          class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"
+                        ></div>
+                        <!-- Floating Card Effect -->
+                        <div
+                          class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background-dark/90 backdrop-blur-md border border-white/10 shadow-lg"
+                        >
+                          <div class="flex items-center gap-4">
+                            <div
+                              class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary"
+                            >
+                              <span class="material-symbols-outlined"
+                                >verified</span
+                              >
+                            </div>
+                            <div>
+                              <p class="text-sm font-bold text-white">
+                                Full-Stack Solutions
+                              </p>
+                              <p class="text-xs text-gray-400">
+                                Delivering high-performance code
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-background-dark py-10">
+      <div class="layout-container flex justify-center px-4 md:px-10 lg:px-40">
+        <div
+          class="layout-content-container w-full max-w-[960px] flex flex-col items-center gap-6"
+        >
+          <!-- <div class="flex flex-wrap justify-center gap-6">
+<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
+<span class="material-symbols-outlined">work</span>
+</a>
+<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div> -->
+          <p class="text-gray-500 text-sm">
+            © 2026 Sivagurunathan P. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Set to July 24, 2024 (Month is 0-indexed, so 6 = July)
+      const CAREER_START_DATE = new Date(2024, 6, 24);
+
+      // Core calculation logic that handles exact days
+      function calculateExperience(startDate) {
+        const today = new Date();
+        let years = today.getFullYear() - startDate.getFullYear();
+        let months = today.getMonth() - startDate.getMonth();
+
+        // If today's date (e.g., the 15th) is earlier than the start date (the 24th),
+        // we haven't completed a full month yet, so subtract 1.
+        if (today.getDate() < startDate.getDate()) {
+          months--;
+        }
+
+        // Handle negative months (borrow a year)
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        return { years, months };
+      }
+
+      function getExperienceDecimal(startDate) {
+        const { years, months } = calculateExperience(startDate);
+        return (years + months / 12).toFixed(1);
+      }
+
+      function getExperienceInWords(startDate) {
+        const { years, months } = calculateExperience(startDate);
+
+        const yearText =
+          years > 0 ? `${years} year${years !== 1 ? "s" : ""}` : "";
+        const monthText =
+          months > 0 ? `${months} month${months !== 1 ? "s" : ""}` : "";
+
+        if (yearText && monthText) return `${yearText} and ${monthText}`;
+        if (yearText) return yearText;
+        if (monthText) return monthText;
+        return "Just started"; // Fallback for week 1
+      }
+
+      // 1. Update the small decimal badge (e.g., "1.3 Years Exp.")
+      const expDecimalEl = document.getElementById("experience-decimal");
+      if (expDecimalEl) {
+        expDecimalEl.textContent = `${getExperienceDecimal(CAREER_START_DATE)} Years Exp.`;
+      }
+
+      // 2. Update the subtitle under "Software Engineer"
+      const expWordsEl = document.getElementById("experience-words");
+      if (expWordsEl) {
+        expWordsEl.textContent = getExperienceInWords(CAREER_START_DATE);
+      }
+
+      // 3. Update the main summary paragraph
+      const expSummaryEl = document.getElementById("experience-summary");
+      if (expSummaryEl) {
+        expSummaryEl.textContent = getExperienceInWords(CAREER_START_DATE);
+      }
+    </script>
+  </body>
+</html>

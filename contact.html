@@ -1,0 +1,280 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact - Sivagurunathan P.</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#49e619",
+              "background-light": "#f6f8f6",
+              "background-dark": "#152111",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #152111;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2c3829;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #49e619;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white min-h-screen flex flex-col"
+  >
+    <!-- Top Navigation -->
+    <div id="header-placeholder"></div>
+    <!-- Main Content -->
+    <main
+      class="flex-grow flex flex-col justify-center items-center px-4 py-12 md:py-20 relative overflow-hidden"
+    >
+      <!-- Subtle Background Pattern -->
+      <div class="absolute inset-0 pointer-events-none opacity-5">
+        <div
+          class="absolute top-20 left-10 text-primary transform -rotate-12 text-6xl font-mono"
+        >
+          &lt;code&gt;
+        </div>
+        <div
+          class="absolute bottom-20 right-10 text-white transform rotate-12 text-6xl font-mono"
+        >
+          { }
+        </div>
+        <div
+          class="absolute top-1/2 left-1/4 w-64 h-64 bg-primary rounded-full blur-[120px] opacity-20"
+        ></div>
+      </div>
+      <div
+        class="w-full max-w-4xl relative z-10 flex flex-col items-center gap-12"
+      >
+        <!-- Hero Text -->
+        <div class="text-center max-w-2xl mx-auto space-y-6">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2c3829] border border-[#41533c]"
+          >
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span
+              class="text-xs font-medium text-white uppercase tracking-wider"
+              >Open to work</span
+            >
+          </div>
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight"
+          >
+            Let's Build <span class="text-primary">Something Great</span>
+          </h1>
+          <p class="text-[#a4b89d] text-base md:text-lg leading-relaxed">
+            Thank you for visiting my portfolio! I am always eager to connect
+            with innovative teams and discuss how my full-stack expertise can
+            drive your next project's success. I'm passionate about building
+            robust, user-centric applications and excited about new challenges.
+          </p>
+        </div>
+        <!-- Contact Card -->
+        <div
+          class="w-full bg-[#1c2918] border border-[#2c3829] rounded-xl md:rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden group"
+        >
+          <!-- Decorative Glow inside card -->
+          <div
+            class="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-700"
+          ></div>
+          <div
+            class="relative z-10 flex flex-col md:flex-row gap-10 md:gap-16 items-start md:items-center justify-between"
+          >
+            <!-- Left: Invitation -->
+            <div class="flex-1 space-y-4">
+              <h3 class="text-2xl font-bold text-white">
+                Ready to collaborate?
+              </h3>
+              <p class="text-[#cccccc] text-sm md:text-base leading-relaxed">
+                Have a chat about exciting opportunities or just want to say hi?
+                Please feel free to reach out directly via email or connect with
+                me on LinkedIn.
+              </p>
+              <div class="flex items-center gap-2 pt-2">
+                <div class="flex -space-x-2">
+                  <!-- Placeholders for team avatars or just visual interest -->
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-[#1c2918] bg-primary flex items-center justify-center text-[10px] font-bold text-black"
+                    title="You"
+                  >
+                    You
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-[#1c2918] bg-white flex items-center justify-center text-[10px] font-bold text-black"
+                    title="Me"
+                  >
+                    Me
+                  </div>
+                </div>
+                <span class="text-xs text-[#a4b89d] font-medium"
+                  >Let's connect today</span
+                >
+              </div>
+            </div>
+            <!-- Right: Actions -->
+            <div class="flex flex-col gap-4 w-full md:w-auto min-w-[300px]">
+              <!-- Email Action -->
+              <div
+                class="flex flex-col gap-2 p-4 rounded-2xl bg-[#131811] border border-[#2c3829] hover:border-primary/50 transition-colors group/email"
+              >
+                <span
+                  class="text-xs text-[#a4b89d] font-medium uppercase tracking-wider ml-1"
+                  >Email</span
+                >
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-white font-medium truncate"
+                    >p.sivagurunathan28@gmail.com</span
+                  >
+                  <button
+                    id="copyEmailBtn"
+                    class="size-8 flex items-center justify-center rounded-full bg-[#2c3829] text-white hover:bg-primary hover:text-black transition-colors"
+                    title="Copy Email"
+                  >
+                    <span
+                      id="copyIcon"
+                      class="material-symbols-outlined text-[18px]"
+                      >content_copy</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- LinkedIn Action -->
+              <a
+                class="flex items-center justify-between p-4 rounded-2xl bg-primary text-black font-bold hover:bg-white transition-colors group/linkedin"
+                href="https://www.linkedin.com/in/sivagurunathan-p/"
+                target="_blank"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="bg-black/10 p-1.5 rounded-full flex items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >link</span
+                    >
+                  </span>
+                  <span>Connect on LinkedIn</span>
+                </div>
+                <span
+                  class="material-symbols-outlined transform group-hover/linkedin:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="border-t border-[#2c3829] bg-[#131811] py-8">
+      <div
+        class="max-w-[1280px] mx-auto px-4 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-[#a4b89d]"
+      >
+        <p>© 2026 Sivagurunathan P. All rights reserved.</p>
+        <div class="flex gap-6">
+          <!-- <a class="hover:text-primary transition-colors" href="#"
+            >Privacy Policy</a
+          >
+          <a class="hover:text-primary transition-colors" href="#"
+            >Terms of Service</a
+          > -->
+          <a
+            class="hover:text-primary transition-colors flex items-center gap-1"
+            href="#"
+          >
+            Back to Top
+            <span class="material-symbols-outlined text-[16px]"
+              >arrow_upward</span
+            >
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("copyEmailBtn")
+        .addEventListener("click", function () {
+          debugger;
+          const email = "p.sivagurunathan28@gmail.com";
+
+          navigator.clipboard
+            .writeText(email)
+            .then(function () {
+              const icon = document.getElementById("copyIcon");
+              icon.innerText = "check";
+
+              setTimeout(function () {
+                icon.innerText = "content_copy";
+              }, 2000);
+            })
+            .catch(function (err) {
+              console.error("Failed to copy text: ", err);
+              alert("Failed to copy email to clipboard.");
+            });
+        });
+    </script>
+
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+
+          // Because the header is injected AFTER the page loads, we need to run the highlight script manually
+          const scripts = document
+            .getElementById("header-placeholder")
+            .getElementsByTagName("script");
+          for (let i = 0; i < scripts.length; i++) {
+            eval(scripts[i].innerText);
+          }
+        })
+        .catch((error) => console.error("Error loading header:", error));
+    </script>
+  </body>
+</html>
