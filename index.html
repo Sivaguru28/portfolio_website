@@ -1,5 +1,4 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html class="dark" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -20,10 +19,6 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
       tailwind.config = {
@@ -34,7 +29,7 @@
               primary: "#49e619",
               "background-light": "#f6f8f6",
               "background-dark": "#152111",
-              "surface-dark": "#1e2b1a",
+              "surface-dark": "#1c2a18",
             },
             fontFamily: {
               display: ["Manrope", "sans-serif"],
@@ -49,218 +44,219 @@
         },
       };
     </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+      }
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #152111;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2c3829;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #49e619;
+      }
+
+      /* Hide default details marker */
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Keyframes for smooth accordion expand and generic fade-ins */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+    </style>
   </head>
   <body
-    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden min-h-screen flex flex-col"
+    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden min-h-screen flex flex-col transition-colors duration-200"
   >
     <!-- Navigation Bar -->
     <header
-      class="sticky top-0 z-50 w-full border-b border-white/10 bg-background-dark/80 backdrop-blur-md"
+      class="sticky top-0 z-50 w-full border-b border-[#283039] bg-background-dark/80 backdrop-blur-md"
     >
-      <div class="layout-container flex h-full grow flex-col">
-        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-4">
-          <div
-            class="layout-content-container flex flex-col w-full max-w-[960px] flex-1"
-          >
-            <div id="header-placeholder"></div>
+      <div class="px-4 md:px-10 lg:px-40 flex justify-center py-4">
+        <div class="flex items-center justify-between w-full max-w-[960px] whitespace-nowrap">
+          <div class="flex items-center gap-4">
+            <a href="#home" class="flex items-center gap-3 text-white">
+              <div class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary">
+                <span class="material-symbols-outlined text-xl">shield_with_heart</span>
+              </div>
+              <h2 class="text-lg font-bold leading-tight tracking-tight">Sivagurunathan</h2>
+            </a>
+          </div>
+
+          <div class="hidden flex-1 justify-end gap-8 md:flex">
+            <nav class="flex items-center gap-8" id="nav-links">
+              <a href="#home" class="nav-item text-sm font-medium hover:text-primary transition-colors text-primary">Home</a>
+              <a href="#about" class="nav-item text-sm font-medium hover:text-primary transition-colors">About</a>
+              <a href="#skills" class="nav-item text-sm font-medium hover:text-primary transition-colors">Skills</a>
+              <a href="#projects" class="nav-item text-sm font-medium hover:text-primary transition-colors">Projects</a>
+              <a href="#contact" class="nav-item text-sm font-medium hover:text-primary transition-colors">Contact</a>
+            </nav>
+            
+            <a
+              href="https://drive.google.com/file/d/1LiZJBDpnXkTfJq5ozk_gB0Ihn-oWh4f2/view?usp=drive_link"
+              target="_blank"
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/95 text-background-dark text-xs font-bold leading-normal tracking-wide transition-colors"
+            >
+              <span class="mr-2 material-symbols-outlined text-[16px]">open_in_new</span>
+              <span class="truncate">View Resume</span>
+            </a>
+          </div>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-white flex items-center justify-center p-1">
+              <span id="mobile-menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+            </button>
           </div>
         </div>
       </div>
-    </header>
-    <!-- Hero Section -->
-    <main class="flex-1">
-      <div class="relative flex h-auto w-full flex-col">
-        <div class="layout-container flex h-full grow flex-col">
-          <div
-            class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-10 lg:py-20"
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark border-b border-[#283039] flex-col px-6 py-6 shadow-lg md:hidden">
+        <div class="flex flex-col gap-5">
+          <a href="#home" class="nav-item text-base font-bold hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="nav-item text-base font-bold hover:text-primary transition-colors">About</a>
+          <a href="#skills" class="nav-item text-base font-bold hover:text-primary transition-colors">Skills</a>
+          <a href="#projects" class="nav-item text-base font-bold hover:text-primary transition-colors">Projects</a>
+          <a href="#contact" class="nav-item text-base font-bold hover:text-primary transition-colors">Contact</a>
+          <a
+            href="https://drive.google.com/file/d/1LiZJBDpnXkTfJq5ozk_gB0Ihn-oWh4f2/view?usp=drive_link"
+            target="_blank"
+            class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 bg-primary hover:bg-primary/95 text-background-dark text-sm font-bold leading-normal tracking-wide mt-2"
           >
-            <div
-              class="layout-content-container flex flex-col max-w-[960px] flex-1"
-            >
-              <div class="@container">
-                <div
-                  class="flex flex-col-reverse gap-10 lg:gap-16 lg:flex-row items-center"
-                >
-                  <!-- Content Column -->
-                  <div class="flex flex-col gap-8 flex-1 w-full lg:w-1/2">
-                    <div class="flex flex-col gap-4 text-left">
-                      <!-- Badge/Label -->
-                      <div
-                        class="flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1"
-                      >
-                        <span
-                          class="size-2 rounded-full bg-primary animate-pulse"
-                        ></span>
-                        <span
-                          class="text-xs font-bold uppercase tracking-wide text-primary"
-                          >Open to work</span
-                        >
-                      </div>
-                      <h1
-                        class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl lg:text-6xl"
-                      >
-                        Innovating with Code:
-                        <span class="text-primary">Driving Solutions</span> as a
-                        Full-Stack Engineer
-                      </h1>
-                      <p
-                        class="text-gray-400 text-base font-normal leading-relaxed md:text-lg"
-                      >
-                        Hello! I'm Sivagurunathan P, a passionate Full-Stack
-                        Developer with
-                        <strong
-                          id="experience-summary"
-                          class="text-[#111418] dark:text-white"
-                        ></strong>
-                        of experience. I specialize in crafting robust, scalable
-                        applications using
-                        <span class="text-white font-medium">C#, .NET Core</span
-                        >, and modern
-                        <span class="text-white font-medium"
-                          >Angular (v19 &amp; v21)</span
-                        >
-                        frameworks. Currently transforming complex challenges
-                        into elegant solutions at Vagus Technologies.
-                      </p>
+            <span class="mr-2 material-symbols-outlined text-[18px]">open_in_new</span>
+            <span>View Resume</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main class="flex-1">
+      
+      <!-- Section: Home (Hero) -->
+      <section id="home" class="py-12 md:py-20 lg:py-24 border-b border-white/5 flex items-center justify-center min-h-[calc(100vh-73px)]">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center w-full">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="flex flex-col-reverse gap-10 lg:gap-16 lg:flex-row items-center">
+                <!-- Content Column -->
+                <div class="flex flex-col gap-8 flex-1 w-full lg:w-1/2">
+                  <div class="flex flex-col gap-4 text-left">
+                    <!-- Badge/Label -->
+                    <div class="flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
+                      <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                      <span class="text-xs font-bold uppercase tracking-wide text-primary">Open to work</span>
                     </div>
-                    <!-- Tech Stack Chips -->
-                    <div class="flex flex-col gap-3">
-                      <p
-                        class="text-xs font-bold uppercase tracking-wider text-gray-500"
-                      >
-                        Core Technologies
-                      </p>
-                      <div class="flex gap-2 flex-wrap">
-                        <div
-                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
-                        >
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >code</span
-                          >
-                          <p
-                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
-                          >
-                            C#
-                          </p>
-                        </div>
-                        <div
-                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
-                        >
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >terminal</span
-                          >
-                          <p
-                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
-                          >
-                            .NET Core
-                          </p>
-                        </div>
-                        <div
-                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
-                        >
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >html</span
-                          >
-                          <p
-                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
-                          >
-                            Angular v19/v21
-                          </p>
-                        </div>
-                        <div
-                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
-                        >
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >api</span
-                          >
-                          <p
-                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
-                          >
-                            RESTful APIs
-                          </p>
-                        </div>
-                        <div
-                          class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group"
-                        >
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >database</span
-                          >
-                          <p
-                            class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal"
-                          >
-                            SQL Server
-                          </p>
-                        </div>
+                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl lg:text-6xl">
+                      Innovating with Code:
+                      <span class="text-primary">Driving Solutions</span> as a Full-Stack Engineer
+                    </h1>
+                    <p class="text-gray-400 text-base font-normal leading-relaxed md:text-lg">
+                      Hello! I'm Sivagurunathan P, a passionate Full-Stack Developer with
+                      <strong class="experience-summary text-white font-bold"></strong>
+                      of experience. I specialize in crafting robust, scalable applications using
+                      <span class="text-white font-medium">C#, .NET Core</span>, and modern
+                      <span class="text-white font-medium">Angular (v19 &amp; v21)</span> frameworks. Currently transforming complex challenges into elegant solutions at Vagus Technologies.
+                    </p>
+                  </div>
+                  <!-- Tech Stack Chips -->
+                  <div class="flex flex-col gap-3">
+                    <p class="text-xs font-bold uppercase tracking-wider text-gray-500">Core Technologies</p>
+                    <div class="flex gap-2 flex-wrap">
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group">
+                        <span class="material-symbols-outlined text-primary text-[18px]">code</span>
+                        <p class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal">C#</p>
                       </div>
-                    </div>
-                    <!-- CTA Actions -->
-                    <div class="flex flex-wrap gap-4 pt-2">
-                      <a
-                        href="https://drive.google.com/file/d/1LiZJBDpnXkTfJq5ozk_gB0Ihn-oWh4f2/view?usp=drive_link"
-                        target="_blank"
-                        class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary hover:bg-[#3cd114] text-background-dark text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/25 transition-all hover:scale-105"
-                      >
-                        <span class="mr-2 material-symbols-outlined text-[18px]"
-                          >open_in_new</span
-                        >
-                        <span class="truncate">View Resume</span>
-                      </a>
-                      <a
-                        href="project.html"
-                        class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-surface-dark hover:bg-white/10 border border-white/10 text-white text-base font-bold leading-normal tracking-wide transition-all"
-                      >
-                        <span class="truncate">View Projects</span>
-                      </a>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group">
+                        <span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+                        <p class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal">.NET Core</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group">
+                        <span class="material-symbols-outlined text-primary text-[18px]">html</span>
+                        <p class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal">Angular v19/v21</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group">
+                        <span class="material-symbols-outlined text-primary text-[18px]">api</span>
+                        <p class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal">RESTful APIs</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/5 hover:border-primary/50 transition-colors pl-3 pr-4 cursor-default group">
+                        <span class="material-symbols-outlined text-primary text-[18px]">database</span>
+                        <p class="text-gray-300 group-hover:text-white text-sm font-medium leading-normal">SQL Server</p>
+                      </div>
                     </div>
                   </div>
-                  <!-- Image Column -->
-                  <div
-                    class="w-full lg:w-1/2 flex justify-center lg:justify-end"
-                  >
-                    <div
-                      class="relative w-full max-w-[500px] aspect-square rounded-2xl overflow-hidden group"
+                  <!-- CTA Actions -->
+                  <div class="flex flex-wrap gap-4 pt-2">
+                    <a
+                      href="https://drive.google.com/file/d/1LiZJBDpnXkTfJq5ozk_gB0Ihn-oWh4f2/view?usp=drive_link"
+                      target="_blank"
+                      class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary hover:bg-[#3cd114] text-background-dark text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/25 transition-all hover:scale-105"
                     >
-                      <!-- Decorative elements -->
-                      <div
-                        class="absolute -inset-1 bg-gradient-to-tr from-primary/40 to-transparent opacity-30 blur-2xl group-hover:opacity-50 transition-opacity duration-500"
-                      ></div>
-                      <!-- Main Image -->
-                      <div
-                        class="relative h-full w-full bg-center bg-cover bg-no-repeat rounded-2xl border border-white/10 bg-surface-dark shadow-2xl"
-                        data-alt="Professional developer working on code in a modern dark office setup with multiple monitors"
-                        style="
-                          background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCgNY7JrZeRtpIfF5Y-WMvqaPBCf6G3qa9xBFVxFN6fwYCIbzTCGEgDMFF9Sg0wUiPNS6K1i8OJ-23_UhNrJEHD5Imwkv5DuvTnJgHRLA0wvhKz_j5V6WfjP01h9lVP1UJUS9OllMSasYn3Ikip8-6kUTVmKQtxXzckshRMSOTRnHSUnD_IuaIIrLhwFVjgkG-4DhB2boldvnLeHxKQyFCj7jniGmFvubAwa5ufsZDNO6isCL4oEPWpX7Lysk5gVf11o7vEXTijrGE&quot;);
-                        "
-                      >
-                        <!-- Overlay gradient for text readability if needed -->
-                        <div
-                          class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"
-                        ></div>
-                        <!-- Floating Card Effect -->
-                        <div
-                          class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background-dark/90 backdrop-blur-md border border-white/10 shadow-lg"
-                        >
-                          <div class="flex items-center gap-4">
-                            <div
-                              class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary"
-                            >
-                              <span class="material-symbols-outlined"
-                                >verified</span
-                              >
-                            </div>
-                            <div>
-                              <p class="text-sm font-bold text-white">
-                                Full-Stack Solutions
-                              </p>
-                              <p class="text-xs text-gray-400">
-                                Delivering high-performance code
-                              </p>
-                            </div>
+                      <span class="mr-2 material-symbols-outlined text-[18px]">open_in_new</span>
+                      <span class="truncate">View Resume</span>
+                    </a>
+                    <a
+                      href="#projects"
+                      class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-surface-dark hover:bg-white/10 border border-white/10 text-white text-base font-bold leading-normal tracking-wide transition-all"
+                    >
+                      <span class="truncate">View Projects</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- Image Column -->
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                  <div class="relative w-full max-w-[450px] aspect-square rounded-2xl overflow-hidden group">
+                    <!-- Decorative elements -->
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-primary/40 to-transparent opacity-30 blur-2xl group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <!-- Main Image -->
+                    <div
+                      class="relative h-full w-full bg-center bg-cover bg-no-repeat rounded-2xl border border-white/10 bg-surface-dark shadow-2xl"
+                      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgNY7JrZeRtpIfF5Y-WMvqaPBCf6G3qa9xBFVxFN6fwYCIbzTCGEgDMFF9Sg0wUiPNS6K1i8OJ-23_UhNrJEHD5Imwkv5DuvTnJgHRLA0wvhKz_j5V6WfjP01h9lVP1UJUS9OllMSasYn3Ikip8-6kUTVmKQtxXzckshRMSOTRnHSUnD_IuaIIrLhwFVjgkG-4DhB2boldvnLeHxKQyFCj7jniGmFvubAwa5ufsZDNO6isCL4oEPWpX7Lysk5gVf11o7vEXTijrGE');"
+                    >
+                      <!-- Overlay gradient -->
+                      <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+                      <!-- Floating Card Effect -->
+                      <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background-dark/90 backdrop-blur-md border border-white/10 shadow-lg">
+                        <div class="flex items-center gap-4">
+                          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
+                            <span class="material-symbols-outlined">verified</span>
+                          </div>
+                          <div>
+                            <p class="text-sm font-bold text-white">Full-Stack Solutions</p>
+                            <p class="text-xs text-gray-400">Delivering high-performance code</p>
                           </div>
                         </div>
                       </div>
@@ -271,51 +267,587 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Section: About -->
+      <section id="about" class="py-16 md:py-24 border-b border-white/5 flex items-center justify-center">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center w-full">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-8">
+            
+            <!-- Section Title -->
+            <div class="flex flex-col gap-2 border-l-4 border-primary pl-6 mb-4">
+              <h2 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-[-0.03em] text-white">About Me</h2>
+              <p class="text-neutral-500 dark:text-neutral-400 text-sm md:text-base">
+                A look into my professional background, experience, and educational qualifications.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <!-- Profile Card (4 cols) -->
+              <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left gap-4 bg-surface-dark p-6 rounded-2xl border border-white/5 shadow-sm w-full">
+                <div class="relative group">
+                  <div
+                    class="bg-center bg-no-repeat bg-cover rounded-full h-40 w-40 shadow-md ring-4 ring-primary/20"
+                    style="background-image: url('https://i.ibb.co/bjbjjHSH/IMG-20230108-105403-167-01.jpg');"
+                  ></div>
+                  <div class="absolute bottom-2 right-2 bg-green-500 w-4 h-4 rounded-full border-2 border-background-dark" title="Available for work"></div>
+                </div>
+                <div class="flex flex-col items-center lg:items-start gap-1">
+                  <h3 class="text-lg md:text-xl font-bold tracking-tight text-white">SIVAGURUNATHAN P</h3>
+                  <p class="text-sm text-gray-400 font-medium">Full-Stack .NET Developer</p>
+                </div>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-2 mt-1">
+                  <span class="inline-flex items-center gap-1 bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-bold px-3 py-1.5 rounded-full">
+                    <span class="material-symbols-outlined text-[16px]">emoji_events</span>
+                    Team Spotlight Award: Nov 2025
+                  </span>
+                </div>
+                <div class="h-px w-full bg-white/5 my-2"></div>
+                <div class="flex flex-col gap-3 w-full text-left text-sm text-gray-300">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+                    <span>Trichy, India</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">language</span>
+                    <span>English, Tamil</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">work_history</span>
+                    <span class="experience-decimal"></span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Timeline and Details (8 cols) -->
+              <div class="lg:col-span-8 flex flex-col justify-center gap-6 h-full p-2 w-full">
+                <div>
+                  <h3 class="text-2xl md:text-3xl font-bold leading-tight mb-4 text-white">
+                    A Dedicated Full-Stack Developer with a Creative Edge.
+                  </h3>
+                  <p class="text-base leading-relaxed text-gray-400">
+                    A dedicated Full-Stack Developer with
+                    <strong class="experience-summary text-white font-semibold"></strong>
+                    of professional experience in designing, implementing, and maintaining robust web applications. Skilled in
+                    <span class="text-primary font-medium">C#</span>,
+                    <span class="text-primary font-medium">.NET Core</span>, and
+                    <span class="text-primary font-medium">Angular</span>. Seeking challenging positions to build robust and high-performance software solutions.
+                  </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                  <!-- Experience Card -->
+                  <div class="flex flex-col bg-surface-dark rounded-2xl p-6 border border-white/5 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                      <div class="p-2 rounded-lg bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined">work</span>
+                      </div>
+                      <h4 class="text-lg font-bold text-white">Experience</h4>
+                    </div>
+                    <div class="relative pl-4 border-l border-white/10 ml-2">
+                      <div class="relative">
+                        <div class="absolute -left-[20.5px] top-1.5 h-3 w-3 rounded-full bg-primary ring-4 ring-surface-dark"></div>
+                        <div class="flex flex-col gap-1 mb-2">
+                          <h5 class="text-base font-bold text-white leading-normal">Software Engineer</h5>
+                          <span class="text-xs font-semibold text-primary">Vagus Technologies Pvt.</span>
+                          <span class="text-xs text-gray-400">July 2024 – Present</span>
+                          <span class="experience-words text-[11px] font-semibold text-gray-400 uppercase tracking-wider mt-1"></span>
+                        </div>
+                        <p class="text-xs leading-relaxed text-gray-400 mt-2">
+                          Developed full-stack applications with C#/.NET Core and Angular, managed SQL data with EF Core/Dapper, and built specialized solutions like .NET Outlook Add-ins and N8N workflow automation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Education Card -->
+                  <div class="flex flex-col bg-surface-dark rounded-2xl p-6 border border-white/5 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                      <div class="p-2 rounded-lg bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined">school</span>
+                      </div>
+                      <h4 class="text-lg font-bold text-white">Education</h4>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                      <div class="flex gap-3 items-start">
+                        <div class="min-w-[40px] h-[40px] rounded-lg bg-background-dark flex items-center justify-center text-xs font-bold text-gray-400">
+                          MCA
+                        </div>
+                        <div class="flex flex-col">
+                          <h5 class="text-sm font-bold text-white leading-normal">Master of Computer Applications</h5>
+                          <p class="text-xs text-primary font-medium">SASTRA DEEMED UNIVERSITY</p>
+                          <p class="text-[11px] text-gray-400">2022 – 2024</p>
+                        </div>
+                      </div>
+                      <div class="h-px w-full bg-white/5"></div>
+                      <div class="flex gap-3 items-start">
+                        <div class="min-w-[40px] h-[40px] rounded-lg bg-background-dark flex items-center justify-center text-xs font-bold text-gray-400">
+                          BCA
+                        </div>
+                        <div class="flex flex-col">
+                          <h5 class="text-sm font-bold text-white leading-normal">Bachelor of Computer Applications</h5>
+                          <p class="text-xs text-primary font-medium">NATIONAL COLLEGE</p>
+                          <p class="text-[11px] text-gray-400">2019 – 2022</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Skills -->
+      <section id="skills" class="py-16 md:py-24 border-b border-white/5 flex items-center justify-center">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center w-full">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-8">
+            
+            <!-- Section Title -->
+            <div class="flex flex-col gap-2 border-l-4 border-primary pl-6 mb-4">
+              <h2 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-[-0.03em] text-white">Tech Stack &amp; Expertise</h2>
+              <p class="text-neutral-500 dark:text-neutral-400 text-sm md:text-base">
+                A comprehensive overview of my technical capabilities. Focused on building scalable, high-performance applications within the Microsoft ecosystem and modern web frameworks.
+              </p>
+            </div>
+
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min w-full">
+              <!-- Backend Card (Spans 2 cols on Large) -->
+              <div class="group relative flex flex-col p-6 md:p-8 rounded-2xl bg-surface-dark border border-white/5 lg:col-span-2 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="relative z-10 flex flex-col h-full justify-between gap-6">
+                  <div class="flex items-start justify-between">
+                    <div class="p-3 rounded-full bg-background-dark w-fit text-primary border border-white/5">
+                      <span class="material-symbols-outlined text-2xl">terminal</span>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">Core Expertise</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Backend Powerhouse</h3>
+                    <p class="text-gray-400 mb-6 text-sm">
+                      Architecting robust server-side solutions. Specialized in .NET ecosystem for high-throughput, secure, and maintainable APIs.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">code</span>
+                        <p class="text-xs font-semibold text-gray-300">C#</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">settings_system_daydream</span>
+                        <p class="text-xs font-semibold text-gray-300">.NET Core</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">api</span>
+                        <p class="text-xs font-semibold text-gray-300">RESTful APIs</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">dataset</span>
+                        <p class="text-xs font-semibold text-gray-300">Entity Framework</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">broadcast_on_personal</span>
+                        <p class="text-xs font-semibold text-gray-300">SignalR</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Frontend Card (Spans 1 col) -->
+              <div class="group relative flex flex-col p-6 md:p-8 rounded-2xl bg-surface-dark border border-white/5 lg:col-span-1 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm">
+                <div class="absolute inset-0 bg-gradient-to-bl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="relative z-10 flex flex-col h-full justify-between gap-6">
+                  <div class="p-3 rounded-full bg-background-dark w-fit text-primary border border-white/5">
+                    <span class="material-symbols-outlined text-2xl">web</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Modern Frontend</h3>
+                    <p class="text-gray-400 mb-6 text-sm">
+                      Creating responsive, interactive user interfaces with advanced Angular capabilities.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-3 pr-4 border border-primary/30 cursor-default">
+                        <span class="material-symbols-outlined text-[16px] text-primary">javascript</span>
+                        <p class="text-xs font-bold text-primary">Angular v19 &amp; v21</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">html</span>
+                        <p class="text-xs font-semibold text-gray-300">HTML5</p>
+                      </div>
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">css</span>
+                        <p class="text-xs font-semibold text-gray-300">CSS3</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Database Card (Spans 1 col) -->
+              <div class="group relative flex flex-col p-6 md:p-8 rounded-2xl bg-surface-dark border border-white/5 lg:col-span-1 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="relative z-10 flex flex-col h-full justify-between gap-6">
+                  <div class="p-3 rounded-full bg-background-dark w-fit text-primary border border-white/5">
+                    <span class="material-symbols-outlined text-2xl">database</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Data Persistence</h3>
+                    <p class="text-gray-400 mb-6 text-sm">
+                      Designing optimized schemas and database models.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">table_view</span>
+                        <p class="text-xs font-semibold text-gray-300">SQL Server</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tools & Platforms (Spans 2 on Large) -->
+              <div class="group relative flex flex-col p-6 md:p-8 rounded-2xl bg-surface-dark border border-white/5 lg:col-span-2 overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-sm">
+                <div class="absolute inset-0 bg-gradient-to-tl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center h-full gap-8">
+                  <div class="flex flex-col gap-4 md:w-1/2">
+                    <div class="p-3 rounded-full bg-background-dark w-fit text-primary border border-white/5">
+                      <span class="material-symbols-outlined text-2xl">construction</span>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold mb-2 text-white">Ecosystem &amp; Tools</h3>
+                      <p class="text-gray-400 text-sm">
+                        Streamlining development workflows with modern CI/CD, project management, and automation tools.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap content-start items-start gap-2 md:w-1/2">
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                      <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">call_split</span>
+                      <p class="text-xs font-semibold text-gray-300">Git</p>
+                    </div>
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                      <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">task_alt</span>
+                      <p class="text-xs font-semibold text-gray-300">Jira</p>
+                    </div>
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#131811] border border-white/5 pl-3 pr-4 transition-all cursor-default group/chip hover:border-primary/50">
+                      <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover/chip:text-primary">account_tree</span>
+                      <p class="text-xs font-semibold text-gray-300">N8N Workflows</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Projects -->
+      <section id="projects" class="py-16 md:py-24 border-b border-white/5 flex items-center justify-center">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center w-full">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-8">
+            
+            <!-- Section Title -->
+            <div class="flex flex-col gap-2 border-l-4 border-primary pl-6 mb-4">
+              <h2 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-[-0.03em] text-white">Projects Showcase</h2>
+              <p class="text-neutral-500 dark:text-neutral-400 text-sm md:text-base">
+                A curated selection of Full-Stack &amp; .NET engineering solutions, demonstrating scalability, optimization, and AI integration.
+              </p>
+            </div>
+
+            <!-- Accordion/Details Container -->
+            <div class="flex flex-col gap-6 w-full">
+              
+              <!-- Project 1: Asset Management System -->
+              <details class="group bg-surface-dark rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_25px_rgba(73,230,25,0.03)]" open>
+                <summary class="cursor-pointer p-6 md:p-8 flex items-start justify-between gap-6 select-none bg-surface-dark transition-colors">
+                  <div class="flex flex-col gap-3 flex-1">
+                    <div class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-primary text-[28px]">inventory_2</span>
+                      <h3 class="text-xl md:text-2xl font-bold text-white">Asset Management System</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                      Developed a comprehensive tracking and management solution to streamline hardware inventory lifecycles, employee assignments, and reporting.
+                    </p>
+                    <span class="text-primary text-xs font-bold mt-1 group-open:hidden uppercase tracking-wider flex items-center gap-1">
+                      Read details <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                    </span>
+                  </div>
+                  <div class="w-8 h-8 flex items-center justify-center rounded-full bg-background-dark text-white transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-background-dark shrink-0 mt-1">
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                  </div>
+                </summary>
+                <div class="px-6 md:px-8 pb-8 pt-2">
+                  <div class="h-px w-full bg-white/5 mb-6"></div>
+                  <div class="flex flex-col gap-6 animate-fade-in">
+                    <div class="flex flex-col md:flex-row gap-6">
+                      <div class="flex-1">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Technical Deep Dive</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                          Architected a robust full-stack application featuring a dynamic <strong class="text-primary">Angular</strong> component architecture for the frontend, coupled with a secure <strong class="text-primary">.NET Core Web API</strong>. Designed complex data grids and real-time reporting features to accurately monitor asset allocation and physical location using optimized <strong class="text-primary">SQL Server</strong> queries.
+                        </p>
+                      </div>
+                      <div class="w-full md:w-1/3 shrink-0">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-primary/20 text-primary border border-primary/30">Angular V21</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">.NET Core API</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">SQL Server</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">HTML/CSS</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <!-- Project 2: Amil Freight -->
+              <details class="group bg-surface-dark rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_25px_rgba(73,230,25,0.03)]">
+                <summary class="cursor-pointer p-6 md:p-8 flex items-start justify-between gap-6 select-none bg-surface-dark transition-colors">
+                  <div class="flex flex-col gap-3 flex-1">
+                    <div class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-primary text-[28px]">local_shipping</span>
+                      <h3 class="text-xl md:text-2xl font-bold text-white">Amil Freight - Logistics Platform</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                      Revolutionized campaign management by implementing advanced sentiment analysis for email replies, significantly enhancing customer interaction and feedback processing.
+                    </p>
+                    <span class="text-primary text-xs font-bold mt-1 group-open:hidden uppercase tracking-wider flex items-center gap-1">
+                      Read details <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                    </span>
+                  </div>
+                  <div class="w-8 h-8 flex items-center justify-center rounded-full bg-background-dark text-white transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-background-dark shrink-0 mt-1">
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                  </div>
+                </summary>
+                <div class="px-6 md:px-8 pb-8 pt-2">
+                  <div class="h-px w-full bg-white/5 mb-6"></div>
+                  <div class="flex flex-col gap-6 animate-fade-in">
+                    <div class="flex flex-col md:flex-row gap-6">
+                      <div class="flex-1">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Technical Deep Dive</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                          Developed a critical 'Campaign' module using <strong class="text-primary">C#</strong>, <strong class="text-primary">.NET MVC</strong>, and <strong class="text-primary">SendGrid</strong>. This feature included custom integrations for email templating and real-time sentiment analysis, providing actionable insights for logistics operations.
+                        </p>
+                      </div>
+                      <div class="w-full md:w-1/3 shrink-0">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">C#</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">.NET MVC</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">SendGrid</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-primary/20 text-primary border border-primary/30">Sentiment Analysis</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <!-- Project 3: HRMS -->
+              <details class="group bg-surface-dark rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_25px_rgba(73,230,25,0.03)]">
+                <summary class="cursor-pointer p-6 md:p-8 flex items-start justify-between gap-6 select-none bg-surface-dark transition-colors">
+                  <div class="flex flex-col gap-3 flex-1">
+                    <div class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-primary text-[28px]">badge</span>
+                      <h3 class="text-xl md:text-2xl font-bold text-white">HRMS (Internal Product)</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                      Engineered a modern internal HR Management System utilizing the latest Angular 19, demonstrating proficiency in cutting-edge frontend development.
+                    </p>
+                    <span class="text-primary text-xs font-bold mt-1 group-open:hidden uppercase tracking-wider flex items-center gap-1">
+                      Read details <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                    </span>
+                  </div>
+                  <div class="w-8 h-8 flex items-center justify-center rounded-full bg-background-dark text-white transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-background-dark shrink-0 mt-1">
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                  </div>
+                </summary>
+                <div class="px-6 md:px-8 pb-8 pt-2">
+                  <div class="h-px w-full bg-white/5 mb-6"></div>
+                  <div class="flex flex-col gap-6 animate-fade-in">
+                    <div class="flex flex-col md:flex-row gap-6">
+                      <div class="flex-1">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Technical Deep Dive</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                          Designed and developed a comprehensive HRMS application with <strong class="text-primary">Angular 19</strong> for the frontend and <strong class="text-primary">.NET Core MVC</strong> for the backend. Key features included employee management, leave tracking, and payroll integration, built for scalability and intuitive user experience.
+                        </p>
+                      </div>
+                      <div class="w-full md:w-1/3 shrink-0">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-primary/20 text-primary border border-primary/30">Angular 19</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">.NET Core</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">TypeScript</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">MSSQL</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <!-- Project 4: VRecruit -->
+              <details class="group bg-surface-dark rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_25px_rgba(73,230,25,0.03)]">
+                <summary class="cursor-pointer p-6 md:p-8 flex items-start justify-between gap-6 select-none bg-surface-dark transition-colors">
+                  <div class="flex flex-col gap-3 flex-1">
+                    <div class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-primary text-[28px]">work_history</span>
+                      <h3 class="text-xl md:text-2xl font-bold text-white">VRecruit - US Recruitment Product</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                      Contributed to a high-performance US recruitment platform, maintaining core functionalities and developing specialized Outlook Add-ins for streamlined workflows.
+                    </p>
+                    <span class="text-primary text-xs font-bold mt-1 group-open:hidden uppercase tracking-wider flex items-center gap-1">
+                      Read details <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                    </span>
+                  </div>
+                  <div class="w-8 h-8 flex items-center justify-center rounded-full bg-background-dark text-white transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-background-dark shrink-0 mt-1">
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                  </div>
+                </summary>
+                <div class="px-6 md:px-8 pb-8 pt-2">
+                  <div class="h-px w-full bg-white/5 mb-6"></div>
+                  <div class="flex flex-col gap-6 animate-fade-in">
+                    <div class="flex flex-col md:flex-row gap-6">
+                      <div class="flex-1">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Technical Deep Dive</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                          Actively maintained and enhanced the core VRecruit application, focusing on optimizing performance and user experience. Developed and integrated <strong class="text-primary">Outlook Add-ins</strong> to automate recruitment tasks, improving efficiency for talent acquisition specialists.
+                        </p>
+                      </div>
+                      <div class="w-full md:w-1/3 shrink-0">
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">ASP.NET</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-primary/20 text-primary border border-primary/30">Outlook API</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">JavaScript</span>
+                          <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold bg-background-dark text-gray-300 border border-white/5">Optimization</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Contact -->
+      <section id="contact" class="py-16 md:py-24 flex items-center justify-center relative overflow-hidden">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center relative overflow-hidden w-full">
+          <!-- Subtle Background Pattern inside section -->
+          <div class="absolute inset-0 pointer-events-none opacity-5">
+            <div class="absolute top-10 left-5 text-primary transform -rotate-12 text-5xl font-mono">&lt;code&gt;</div>
+            <div class="absolute bottom-10 right-5 text-white transform rotate-12 text-5xl font-mono">{ }</div>
+          </div>
+
+          <div class="w-full max-w-[960px] relative z-10 flex flex-col items-center gap-10">
+            <!-- Hero Text -->
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1c2a18] border border-white/5">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-[10px] font-medium text-white uppercase tracking-wider">Open to work</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-[-0.03em] text-white">
+                Let's Build <span class="text-primary">Something Great</span>
+              </h2>
+              <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                Thank you for visiting my portfolio! I am always eager to connect with innovative teams and discuss how my full-stack expertise can drive your next project's success. I'm passionate about building robust, user-centric applications and excited about new challenges.
+              </p>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="w-full bg-[#1c2a18] border border-white/5 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden group">
+              <!-- Glow -->
+              <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-700 pointer-events-none"></div>
+              
+              <div class="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center justify-between">
+                <!-- Left: Invitation -->
+                <div class="flex-1 space-y-3">
+                  <h3 class="text-lg md:text-xl font-bold text-white">Ready to collaborate?</h3>
+                  <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+                    Have a chat about exciting opportunities or just want to say hi? Please feel free to reach out directly via email or connect with me on LinkedIn.
+                  </p>
+                  <div class="flex items-center gap-2 pt-1">
+                    <div class="flex -space-x-2">
+                      <div class="w-7 h-7 rounded-full border border-[#1c2a18] bg-primary flex items-center justify-center text-[9px] font-bold text-black" title="You">You</div>
+                      <div class="w-7 h-7 rounded-full border border-[#1c2a18] bg-white flex items-center justify-center text-[9px] font-bold text-black" title="Me">Me</div>
+                    </div>
+                    <span class="text-xs text-gray-400 font-medium">Let's connect today</span>
+                  </div>
+                </div>
+                
+                <!-- Right: Actions -->
+                <div class="flex flex-col gap-3 w-full md:w-auto min-w-[280px]">
+                  <!-- Email Action -->
+                  <div class="flex flex-col gap-1 p-4 rounded-xl bg-background-dark border border-white/5 hover:border-primary/50 transition-colors group/email">
+                    <span class="text-[10px] text-gray-500 font-medium uppercase tracking-wider ml-1">Email</span>
+                    <div class="flex items-center justify-between gap-3">
+                      <span class="text-white text-xs md:text-sm font-medium truncate">p.sivagurunathan28@gmail.com</span>
+                      <button id="copyEmailBtn" class="size-7 flex items-center justify-center rounded-full bg-surface-dark text-white hover:bg-primary hover:text-black transition-colors" title="Copy Email">
+                        <span id="copyIcon" class="material-symbols-outlined text-[16px]">content_copy</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- LinkedIn Action -->
+                  <a class="flex items-center justify-between p-3.5 rounded-xl bg-primary text-black text-sm font-bold hover:bg-white transition-colors group/linkedin" href="https://www.linkedin.com/in/sivagurunathan-p/" target="_blank">
+                    <div class="flex items-center gap-3">
+                      <span class="bg-black/10 p-1.5 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[18px]">link</span>
+                      </span>
+                      <span>Connect on LinkedIn</span>
+                    </div>
+                    <span class="material-symbols-outlined transform group-hover/linkedin:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
+
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-background-dark py-10">
-      <div class="layout-container flex justify-center px-4 md:px-10 lg:px-40">
-        <div
-          class="layout-content-container w-full max-w-[960px] flex flex-col items-center gap-6"
-        >
-          <!-- <div class="flex flex-wrap justify-center gap-6">
-<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
-<span class="material-symbols-outlined">code</span>
-</a>
-<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
-<span class="material-symbols-outlined">work</span>
-</a>
-<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
-<span class="material-symbols-outlined">mail</span>
-</a>
-<a class="group flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-white/5 text-gray-400 transition-all hover:bg-primary hover:text-background-dark hover:scale-110" href="#">
-<span class="material-symbols-outlined">share</span>
-</a>
-</div> -->
-          <p class="text-gray-500 text-sm">
-            © 2026 Sivagurunathan P. All rights reserved.
-          </p>
+    <footer class="border-t border-[#2c3829] bg-[#131811] py-8">
+      <div class="max-w-[960px] mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#a4b89d]">
+        <p>© 2026 Sivagurunathan P. All rights reserved.</p>
+        <div class="flex gap-4 items-center">
+          <a class="text-gray-400 hover:text-primary transition-colors flex items-center gap-1" href="https://github.com/Sivaguru28" target="_blank" title="GitHub">
+            <span class="sr-only">GitHub</span>
+            <span class="material-symbols-outlined text-[20px]">code_blocks</span>
+          </a>
+          <span class="text-gray-600">|</span>
+          <a class="hover:text-primary transition-colors flex items-center gap-1" href="#home">
+            Back to Top
+            <span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+          </a>
         </div>
       </div>
     </footer>
-    <script>
-      // Set to July 24, 2024 (Month is 0-indexed, so 6 = July)
-      const CAREER_START_DATE = new Date(2024, 6, 24);
 
-      // Core calculation logic that handles exact days
+    <!-- Scripts -->
+    <script>
+      // 1. Career Experience Calculator
+      const CAREER_START_DATE = new Date(2024, 6, 24); // July 24, 2024
+
       function calculateExperience(startDate) {
         const today = new Date();
         let years = today.getFullYear() - startDate.getFullYear();
         let months = today.getMonth() - startDate.getMonth();
 
-        // If today's date (e.g., the 15th) is earlier than the start date (the 24th),
-        // we haven't completed a full month yet, so subtract 1.
+        // If today's date is earlier than the start date, we haven't completed a full month yet
         if (today.getDate() < startDate.getDate()) {
           months--;
         }
 
-        // Handle negative months (borrow a year)
+        // Handle negative months
         if (months < 0) {
           years--;
           months += 12;
@@ -326,57 +858,106 @@
 
       function getExperienceDecimal(startDate) {
         const { years, months } = calculateExperience(startDate);
-        return (years + months / 12).toFixed(1);
+        return `${years}.${months}`;
       }
 
       function getExperienceInWords(startDate) {
         const { years, months } = calculateExperience(startDate);
 
-        const yearText =
-          years > 0 ? `${years} year${years !== 1 ? "s" : ""}` : "";
-        const monthText =
-          months > 0 ? `${months} month${months !== 1 ? "s" : ""}` : "";
+        const yearText = years > 0 ? `${years} year${years !== 1 ? "s" : ""}` : "";
+        const monthText = months > 0 ? `${months} month${months !== 1 ? "s" : ""}` : "";
 
         if (yearText && monthText) return `${yearText} and ${monthText}`;
         if (yearText) return yearText;
         if (monthText) return monthText;
-        return "Just started"; // Fallback for week 1
+        return "Just started";
       }
 
-      // 1. Update the small decimal badge (e.g., "1.3 Years Exp.")
-      const expDecimalEl = document.getElementById("experience-decimal");
-      if (expDecimalEl) {
-        expDecimalEl.textContent = `${getExperienceDecimal(CAREER_START_DATE)} Years Exp.`;
+      function updateExperience() {
+        const decimalExp = `${getExperienceDecimal(CAREER_START_DATE)} Years Exp.`;
+        const wordsExp = getExperienceInWords(CAREER_START_DATE);
+
+        document.querySelectorAll(".experience-decimal").forEach(el => el.textContent = decimalExp);
+        document.querySelectorAll(".experience-words").forEach(el => el.textContent = wordsExp);
+        document.querySelectorAll(".experience-summary").forEach(el => el.textContent = wordsExp);
       }
 
-      // 2. Update the subtitle under "Software Engineer"
-      const expWordsEl = document.getElementById("experience-words");
-      if (expWordsEl) {
-        expWordsEl.textContent = getExperienceInWords(CAREER_START_DATE);
+      // Initialize experience calculation
+      updateExperience();
+
+      // 2. Email Copy Button
+      const copyEmailBtn = document.getElementById("copyEmailBtn");
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener("click", function () {
+          const email = "p.sivagurunathan28@gmail.com";
+          navigator.clipboard.writeText(email).then(function () {
+            const icon = document.getElementById("copyIcon");
+            if (icon) {
+              icon.innerText = "check";
+              setTimeout(function () {
+                icon.innerText = "content_copy";
+              }, 2000);
+            }
+          }).catch(function (err) {
+            console.error("Failed to copy text: ", err);
+          });
+        });
       }
 
-      // 3. Update the main summary paragraph
-      const expSummaryEl = document.getElementById("experience-summary");
-      if (expSummaryEl) {
-        expSummaryEl.textContent = getExperienceInWords(CAREER_START_DATE);
-      }
-    </script>
+      // 3. Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileIcon = document.getElementById('mobile-menu-icon');
 
-    <script>
-      fetch("header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header-placeholder").innerHTML = data;
-
-          // Because the header is injected AFTER the page loads, we need to run the highlight script manually
-          const scripts = document
-            .getElementById("header-placeholder")
-            .getElementsByTagName("script");
-          for (let i = 0; i < scripts.length; i++) {
-            eval(scripts[i].innerText);
+      if (mobileBtn && mobileMenu && mobileIcon) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('flex');
+          if (mobileMenu.classList.contains('hidden')) {
+            mobileIcon.innerText = 'menu';
+          } else {
+            mobileIcon.innerText = 'close';
           }
-        })
-        .catch((error) => console.error("Error loading header:", error));
+        });
+
+        // Auto-close menu when a navigation item is clicked
+        const mobileNavItems = mobileMenu.querySelectorAll('.nav-item');
+        mobileNavItems.forEach(item => {
+          item.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            mobileIcon.innerText = 'menu';
+          });
+        });
+      }
+
+      // 4. Scroll-Spy and Active Navigation Link Highlight
+      const sections = document.querySelectorAll('section[id]');
+      const navItems = document.querySelectorAll('.nav-item');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        
+        // Handle bottom of page edge case
+        if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 60) {
+          current = 'contact';
+        } else {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // Header offset margin
+            if (window.scrollY >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+        }
+
+        navItems.forEach(item => {
+          item.classList.remove('text-primary');
+          const href = item.getAttribute('href');
+          if (href === `#${current}`) {
+            item.classList.add('text-primary');
+          }
+        });
+      });
     </script>
   </body>
 </html>
